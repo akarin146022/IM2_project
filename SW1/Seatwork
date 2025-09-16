@@ -1,0 +1,14 @@
+# Exchange rates
+PESO_RATE = 57.17
+YEN_RATE = 146.67
+
+dollar_input = input("Enter currency in ($): ")
+dollar_amounts = dollar_input.split(',')
+
+print("Dollar($)\tPhil Peso(P)\tJpn Yen (Y)")
+
+for amount in dollar_amounts:
+    dollar = float(amount.strip())
+    peso = dollar * PESO_RATE
+    yen = dollar * YEN_RATE
+    print(f"{dollar:.0f}\t\t{peso:.2f}\t\t{yen:.2f}")
