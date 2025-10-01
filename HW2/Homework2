@@ -1,0 +1,24 @@
+def count_characters(text):
+    freq = {}
+    
+    for char in text:
+        if char.isalpha():
+            freq[char] = freq.get(char, 0) + 1
+    
+    return freq
+
+text = input("Enter string: ")
+result = count_characters(text)
+
+seen = []
+unique_chars = []
+for char in text:
+    if char.isalpha():
+        seen.append(char)
+        unique_chars.append(char)
+
+for i, char in enumerate(unique_chars):
+    if i == len(unique_chars) - 1: 
+        print(f"{char}={result[char]}")
+    else:
+        print(f"{char}={result[char]}", end=", ")
